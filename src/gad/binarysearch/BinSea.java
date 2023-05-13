@@ -33,7 +33,7 @@ public final class BinSea {
         int grenze = search(sortedData,value,result);
         if(lowerBound){
             if (sortedData[grenze] >= value){
-                while (sortedData[grenze] >= value){
+                while (grenze > 0 && sortedData[grenze - 1] >= value){
                     grenze--;
                 }
             }
@@ -48,7 +48,7 @@ public final class BinSea {
 
         else {
             if (sortedData[grenze] <= value){
-                while (sortedData[grenze] <= value){
+                while (grenze < sortedData.length - 1 && sortedData[grenze + 1] <= value){
                     grenze++;
                 }
             }

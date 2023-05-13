@@ -63,7 +63,7 @@ public final class BinSea {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[] {7};
+        int[] array = new int[] { 2, 7};
 
         System.out.println(search(array, 7, new StudentResult()));
         System.out.println(search(array, 100, new StudentResult()));

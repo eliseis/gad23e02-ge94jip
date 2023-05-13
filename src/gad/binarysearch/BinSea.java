@@ -11,10 +11,7 @@ public final class BinSea {
         int from = 0;
         int to = sortedData.length - 1;
         int index = -1;
-        while (from <= to){
-            if (to - from <= 1){
-                break;
-            }
+        while (from + 1 < to){
             int mid = from + (to - from) / 2;
             result.addStep(mid);
             if (sortedData[mid] < value) {
@@ -28,7 +25,7 @@ public final class BinSea {
                 break;
             }
         }
-        return index;
+        return index + 1;
     }
 
     public static int search(int[] sortedData, int value, boolean lowerBound, Result result) {
@@ -64,8 +61,8 @@ public final class BinSea {
     public static void main(String[] args) {
         int[] array = new int[] { 2, 7, 7, 42, 69, 1337, 2000, 9001 };
 
-        System.out.println(search(array, 7, new StudentResult()));
-        //System.out.println(search(array, 100, new StudentResult()));
+        System.out.println(search(array, 2, new StudentResult()));
+        System.out.println(search(array, 100, new StudentResult()));
 
         //System.out.println(search(array, 7, false, new StudentResult()));
         //System.out.println(search(array, 100, true, new StudentResult()));

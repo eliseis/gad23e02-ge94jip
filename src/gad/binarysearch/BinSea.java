@@ -65,21 +65,23 @@ public final class BinSea {
 
     public static Interval search(int[] sortedData, NonEmptyInterval valueRange, Result resultLower, Result resultHigher) {
         int grenzeL = search(sortedData, valueRange.getFrom(), true, resultLower);
+        if (grenzeL == -1) {
+            Interval.EmptyInterval interval = new Interval.EmptyInterval();
+            return interval;
+        }
         int grenzeH = search(sortedData, valueRange.getTo(), false, resultHigher);
-        if (grenzeH < grenzeL){
+        if (grenzeH == -1) {
             Interval.EmptyInterval interval = new Interval.EmptyInterval();
             return interval;
         }
-        if (grenzeH != -1 && grenzeL != -1){
-            Interval.NonEmptyInterval interval = new NonEmptyInterval(grenzeL,grenzeH);
-            return interval;
-        }
-        else {
+            if (grenzeH < grenzeL) {
+                Interval.EmptyInterval interval = new Interval.EmptyInterval();
+                return interval;
+            }
             Interval.EmptyInterval interval = new Interval.EmptyInterval();
             return interval;
-        }
-
     }
+
 
     public static void main(String[] args) {
         int[] array = new int[] { 2,7,7,42,69,1337,2000,9001};

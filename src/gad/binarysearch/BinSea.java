@@ -11,6 +11,10 @@ public final class BinSea {
         int from = 0;
         int to = sortedData.length - 1;
         int index = -1;
+        if (from + 1 >= to){
+            result.addStep(to);
+            index = 0;
+        }
         while (from + 1 < to){
             int mid = from + (to - from) / 2;
             result.addStep(mid);
@@ -59,9 +63,9 @@ public final class BinSea {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[] { 2, 7, 7, 42, 69, 1337, 2000, 9001 };
+        int[] array = new int[] {7};
 
-        System.out.println(search(array, 2, new StudentResult()));
+        System.out.println(search(array, 7, new StudentResult()));
         System.out.println(search(array, 100, new StudentResult()));
 
         //System.out.println(search(array, 7, false, new StudentResult()));

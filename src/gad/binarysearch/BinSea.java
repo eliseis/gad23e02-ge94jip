@@ -21,7 +21,7 @@ public final class BinSea {
                 from = mid + 1;
                 index = from;
             } else if (sortedData[mid] > value) {
-                to = mid;
+                to = mid - 1;
                 index = to;
             } else if (sortedData[mid] == value) {
                 index = mid;

@@ -20,9 +20,9 @@ public final class BinSea {
                 index = (from + to) / 2;
             } else if (sortedData[mid] > value) {
                 to = mid - 1;
-                index = to;
-            } else if (sortedData[mid] == value) {
                 index = (from + to) / 2;
+            } else if (sortedData[mid] == value) {
+                index = mid;
                 break;
             }
         }

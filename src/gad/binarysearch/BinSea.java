@@ -13,7 +13,12 @@ public final class BinSea {
         int index = -1;
         if (from + 1 >= to){
             result.addStep(to);
-            index = 0;
+            if (to == value){
+                index = to;
+            }
+            if (from == value){
+                index = from;
+            }
         }
         while (from + 1 < to){
             int mid = from + (to - from) / 2;
@@ -63,7 +68,7 @@ public final class BinSea {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[] { 2, 7};
+        int[] array = new int[] { 7, 7, 7, 7, 7};
 
         System.out.println(search(array, 7, new StudentResult()));
         System.out.println(search(array, 100, new StudentResult()));

@@ -25,7 +25,7 @@ public final class BinSea {
                 break;
             }
         }
-        return index + 1;
+        return index;
     }
 
     public static int search(int[] sortedData, int value, boolean lowerBound, Result result) {

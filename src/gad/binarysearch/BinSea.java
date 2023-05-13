@@ -66,16 +66,16 @@ public final class BinSea {
     public static Interval search(int[] sortedData, NonEmptyInterval valueRange, Result resultLower, Result resultHigher) {
         int grenzeL = search(sortedData, valueRange.getFrom(), true, resultLower);
         if (grenzeL == -1) {
-            Interval interval = new Interval.EmptyInterval();
+            Interval interval = Interval.EmptyInterval.getEmptyInterval();
             return interval;
         }
         int grenzeH = search(sortedData, valueRange.getTo(), false, resultHigher);
         if (grenzeH == -1) {
-            Interval interval = new Interval.EmptyInterval();
+            Interval interval = Interval.EmptyInterval.getEmptyInterval();
             return interval;
         }
         if (grenzeH < grenzeL) {
-                Interval interval = new Interval.EmptyInterval();
+                Interval interval = Interval.EmptyInterval.getEmptyInterval();
                 return interval;
         }
         Interval interval = new Interval.NonEmptyInterval(grenzeL, grenzeH);

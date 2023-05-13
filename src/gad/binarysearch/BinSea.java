@@ -11,7 +11,7 @@ public final class BinSea {
         int from = 0;
         int to = sortedData.length;
         int index = -1;
-        while (from < to){
+        while (from <= to){
             int mid = from + (to - from) / 2;
             if (sortedData[mid] < value) {
                 from = mid - 1;
@@ -31,40 +31,10 @@ public final class BinSea {
     }
 
     public static int search(int[] sortedData, int value, boolean lowerBound, Result result) {
-        int index = 0;
-        int grenze = 0;
-        index = search(sortedData,value,result);
-         if(lowerBound){
-             if (sortedData[index] < value) {
-                 grenze = index + 1;
-             }
-             else {
-                 grenze = index;
-             }
-         }
-         else {
-             if (sortedData[index] > value) {
-                 grenze = index - 1;
-             }
-             else {
-               grenze = index;
-             }
-         }
-         if (grenze > sortedData.length){
-             grenze = -1;
-         }
-         result.addStep(grenze);
-         return grenze;
+        return 0;
     }
 
     public static Interval search(int[] sortedData, NonEmptyInterval valueRange, Result resultLower, Result resultHigher) {
-        int grenzeL = 0;
-        int grenzeH = 0;
-        grenzeL = search(sortedData, valueRange.getFrom(), false, resultLower);
-        grenzeH = search(sortedData, valueRange.getTo(), true, resultHigher);
-        resultHigher.addStep(grenzeH);
-        resultLower.addStep(grenzeL);
-
         return null;
     }
 

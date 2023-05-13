@@ -42,7 +42,8 @@ public final class BinSea {
                     if (grenze > sortedData.length - 1){
                         return -1;
                     }
-                }
+               return grenze;
+            }
         }
 
         else {
@@ -56,6 +57,7 @@ public final class BinSea {
                 if (grenze < 0){
                     return -1;
                 }
+            return grenze;
             }
         }
         return grenze;

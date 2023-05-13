@@ -78,7 +78,7 @@ public abstract class Interval {
     public static final class EmptyInterval extends Interval {
         private static EmptyInterval singleton = new EmptyInterval();
 
-        private EmptyInterval() {
+        EmptyInterval() {
         }
 
         /**

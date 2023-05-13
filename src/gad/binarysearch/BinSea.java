@@ -17,12 +17,12 @@ public final class BinSea {
             result.addStep(mid);
             if (sortedData[mid] < value) {
                 from = mid + 1;
-                index = from;
+                index = (from + to) / 2;
             } else if (sortedData[mid] > value) {
                 to = mid - 1;
                 index = to;
             } else if (sortedData[mid] == value) {
-                index = mid;
+                index = (from + to) / 2;
                 break;
             }
         }

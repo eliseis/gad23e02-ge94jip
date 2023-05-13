@@ -38,15 +38,13 @@ public final class BinSea {
                 }
             }
             if (sortedData[grenze] < value){
-                while (sortedData[grenze] < value){
-                    grenze++;
+               grenze++;
                     if (grenze > sortedData.length - 1){
                         return -1;
                     }
                 }
-            }
-
         }
+
         else {
             if (sortedData[grenze] <= value){
                 while (sortedData[grenze] <= value){
@@ -54,14 +52,11 @@ public final class BinSea {
                 }
             }
             if (sortedData[grenze] > value){
-                while (sortedData[grenze] > value){
-                    grenze--;
-                    if (grenze < 0){
-                        return -1;
-                    }
+                grenze--;
+                if (grenze < 0){
+                    return -1;
                 }
             }
-
         }
         return grenze;
     }

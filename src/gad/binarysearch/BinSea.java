@@ -8,14 +8,60 @@ public final class BinSea {
     }
 
     public static int search(int[] sortedData, int value, Result result) {
-        return 0;
+
+        Interval a = new Interval;
+
+        int index = -1;
+        while (from <= to){
+            int mid = from + (to - from) / 2;
+            if (sortedData[mid] < value) {
+                from = mid - 1;
+                index = from;
+                result.addStep(index)
+            } else if (sortedData[mid] > value) {
+                to = mid - 1;
+                index = to;
+                result.addStep(index)
+            } else if (sortedData[mid] == value) {
+                index = mid;
+                result.addStep(index)
+                break;
+            }
+        }
+        return index;
     }
 
     public static int search(int[] sortedData, int value, boolean lowerBound, Result result) {
-        return 0;
+        index = search(sortedData,value,result);
+         if(lowerBound){
+             if (sortedData[index] < value) {
+                 int grenze = index + 1;
+             }
+             else {
+                 int grenze = index;
+             }
+         }
+         else {
+             if (sortedData[index] > value) {
+                 int grenze = index - 1;
+             }
+             else {
+                 grenze = index;
+             }
+         }
+         if (grenze > sortedData.length){
+             grenze = -1;
+         }
+         result.addStep(grenze);
+         return grenze;
     }
 
     public static Interval search(int[] sortedData, NonEmptyInterval valueRange, Result resultLower, Result resultHigher) {
+        grenzeL = search(sortedData, valueRange.getFrom(), false, result);
+        grenzeH = search(sortedData, valueRange.getTo(), true, result);
+        resultHigher.addStep(grenzeH);
+        resultLower.addStep(grenzeL);
+
         return null;
     }
 

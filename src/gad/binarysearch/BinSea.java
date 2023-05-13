@@ -66,25 +66,25 @@ public final class BinSea {
     public static Interval search(int[] sortedData, NonEmptyInterval valueRange, Result resultLower, Result resultHigher) {
         int grenzeL = search(sortedData, valueRange.getFrom(), true, resultLower);
         if (grenzeL == -1) {
-            Interval.EmptyInterval interval = new Interval.EmptyInterval();
+            Interval interval = new Interval.EmptyInterval();
             return interval;
         }
         int grenzeH = search(sortedData, valueRange.getTo(), false, resultHigher);
         if (grenzeH == -1) {
-            Interval.EmptyInterval interval = new Interval.EmptyInterval();
+            Interval interval = new Interval.EmptyInterval();
             return interval;
         }
         if (grenzeH < grenzeL) {
-                Interval.EmptyInterval interval = new Interval.EmptyInterval();
+                Interval interval = new Interval.EmptyInterval();
                 return interval;
         }
-        Interval.NonEmptyInterval interval = new Interval.NonEmptyInterval(grenzeL,grenzeH);
+        Interval interval = new Interval.NonEmptyInterval(grenzeL, grenzeH);
         return interval;
     }
 
 
     public static void main(String[] args) {
-        int[] array = new int[] { 2,7,7,42,69,1337,2000,9001};
+        int[] array = new int[] { 2,7,7,42,69,100,2000,9001};
 
        //System.out.println(search(array, 7, new StudentResult()));
         //System.out.println(search(array, 100, new StudentResult()));
@@ -93,6 +93,6 @@ public final class BinSea {
         //System.out.println(search(array, 100, true, new StudentResult()));
 
         System.out.println(search(array, new NonEmptyInterval(7, 1500), new StudentResult(), new StudentResult()));
-        System.out.println(search(array, new NonEmptyInterval(9002, 10000), new StudentResult(), new StudentResult()));
+        System.out.println(search(array, new NonEmptyInterval(100,100 ), new StudentResult(), new StudentResult()));
     }
 }

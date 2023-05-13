@@ -10,7 +10,7 @@ public final class BinSea {
     public static int search(int[] sortedData, int value, Result result) {
         int from = 0;
         int to = sortedData.length - 1;
-        int index = -1;
+        int index = 0;
 
         while (from < to){
             int mid = from + (to - from) / 2;

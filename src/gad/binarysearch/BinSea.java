@@ -12,8 +12,8 @@ public final class BinSea {
         int to = sortedData.length - 1;
         int index = 0;
 
-        while (from < to){
-            int mid = from + (to - from) / 2;
+        while (from != to && from <= to){
+            int mid = (from + to) / 2;
             result.addStep(mid);
             if (sortedData[mid] < value) {
                 from = mid + 1;

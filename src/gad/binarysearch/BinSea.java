@@ -74,7 +74,7 @@ public final class BinSea {
             Interval.EmptyInterval interval = new Interval.EmptyInterval();
             return interval;
         }
-        if (grenzeH < grenzeL) {
+        if (grenzeH <= grenzeL) {
                 Interval.EmptyInterval interval = new Interval.EmptyInterval();
                 return interval;
         }
